@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Premium Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ===== Animated Background ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #141e30, #243b55, #ff00cc, #3333ff);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* ===== Layout ===== */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    width: 250px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.5);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px #ff00cc;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.sidebar ul li:hover {
+    background: linear-gradient(45deg, #ff00cc, #3333ff);
+    transform: translateX(10px);
+}
+
+/* ===== Main Content ===== */
+.main {
+    flex: 1;
+    padding: 40px;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(40px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.main h1 {
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px #00f0ff;
+}
+
+/* ===== Cards ===== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(255,0,200,0.6);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.card p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ===== Responsive ===== */
+@media(max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>My Dashboard</h2>
+        <ul>
+            <li>🏠 Home</li>
+            <li>📊 Analytics</li>
+            <li>👤 Profile</li>
+            <li>⚙ Settings</li>
+            <li>🚪 Logout</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Welcome to Your Dashboard 🚀</h1>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Users</h3>
+                <p>1,250 Active Users</p>
+            </div>
+
+            <div class="card">
+                <h3>Revenue</h3>
+                <p>$8,540 This Month</p>
+            </div>
+
+            <div class="card">
+                <h3>Projects</h3>
+                <p>32 Ongoing Projects</p>
+            </div>
+
+            <div class="card">
+                <h3>Notifications</h3>
+                <p>5 New Messages</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
